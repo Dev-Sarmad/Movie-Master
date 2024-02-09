@@ -1,5 +1,6 @@
 import logo from "../assets/react.svg";
 import Search from "./Search";
+
 function Navbar() {
   return (
     <>

@@ -7,7 +7,7 @@ function App() {
     <>
       <Navbar />
       <div className="flex items-center">
-        <div className={" w-[300px]  md:block sm:hidden"}>
+        <div className=" w-[300px] md:block sm:hidden">
           <Sidebar />
         </div>
         <div className="w-full bg-green-500">

@@ -1,12 +1,16 @@
+import { Genres } from "../hooks/useGenres";
 import useMovies from "../hooks/useMovies";
 
-function Movies() {
-  const { data } = useMovies();
+interface Props{
+  selectedGenre: Genres |null
+}
+function Movies({selectedGenre}:Props) {
+  const { data } = useMovies(selectedGenre);
 
   return (
     <>
       {data.map((movie) => (
-        <li className="cursor-pointer md:w-[300px]">
+        <li key={movie.id} className="cursor-pointer md:w-[300px]">
           <img
             className="w-full rounded-2xl object-cover"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

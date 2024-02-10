@@ -6,12 +6,15 @@ export interface Movie {
   title: string;
   poster_path: string;
 }
-const useMovies = (selectedGenre: Genres | null) =>
+const useMovies = (
+  selectedGenre: Genres | null,
+  selectedRelevance: string | null
+) =>
   useData<Movie>(
     "/discover/movie",
     {
-      params: { with_genres: selectedGenre?.id },
+      params: { with_genres: selectedGenre?.id, sort_by: selectedRelevance },
     },
-    [selectedGenre?.id]
+    [selectedGenre?.id, selectedRelevance]
   );
 export default useMovies;

@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 import { Genres } from "./hooks/useGenres";
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genres| null>(null);
+  const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
   return (
     <>
       <Navbar />

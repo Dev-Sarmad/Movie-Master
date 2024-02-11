@@ -16,6 +16,7 @@ function SortSelector({ onSelectRelevance }: Props) {
         className="bg-[#151515]"
         onChange={(e) => onSelectRelevance(e.target.value)}
       >
+        <option value="">Select Order</option>
         {sortSelector.map((sort) => (
           <option
             value={sort.value}

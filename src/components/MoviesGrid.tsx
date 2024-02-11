@@ -3,13 +3,15 @@ import Movies from "./Movies";
 interface Props {
   selectedGenre: Genres | null;
   selectedRelevance: string | null;
+  search: string ;
 }
-function MoviesGrid({ selectedGenre, selectedRelevance }: Props) {
+function MoviesGrid({ selectedGenre, selectedRelevance , search }: Props) {
   return (
     <div className="bg-[#151515] py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h1 className="text-white md:text-5xl  text-2xl font-extrabold">
           {selectedGenre ? `${selectedGenre.name} Movies` : "New and Trending"}
+          
         </h1>
         <ul
           role="list"
@@ -18,6 +20,7 @@ function MoviesGrid({ selectedGenre, selectedRelevance }: Props) {
           <Movies
             selectedGenre={selectedGenre}
             selectedRelevance={selectedRelevance}
+            search={search}
           />
         </ul>
       </div>

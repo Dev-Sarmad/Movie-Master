@@ -5,7 +5,6 @@ interface Props {
 }
 function Sidebar({ onSlectGenre }: Props) {
   const { genres } = useGenres();
-  console.log(genres);
   return (
     <div>
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col z-0 ">
@@ -21,7 +20,7 @@ function Sidebar({ onSlectGenre }: Props) {
                   onClick={() => onSlectGenre(genre)}
                   className="font-bold cursor-pointer"
                 >
-                  <div className="flex justify-between">
+                  <div className="flex justify-between hover:ease-in-out hover:duration-300 hover:scale-105">
                     {genre.name} <GenresIcons GenIcons={genre} />
                   </div>
                 </li>

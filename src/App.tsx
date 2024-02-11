@@ -8,9 +8,10 @@ import SortSelector from "./components/SortSelector";
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
   const [selectedRelevance, setSelectedRelevance] = useState<string | null>("");
+  const [search, setSearch] = useState<string>("");
   return (
     <>
-      <Navbar />
+      <Navbar onSearch={(q) => setSearch(q)} />
       <div className="flex items-center">
         <div className=" w-[300px] md:block sm:hidden">
           <Sidebar onSlectGenre={(genre) => setSelectedGenre(genre)} />
@@ -22,6 +23,7 @@ function App() {
           <MoviesGrid
             selectedGenre={selectedGenre}
             selectedRelevance={selectedRelevance}
+            search={search}
           />
         </div>
       </div>

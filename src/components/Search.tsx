@@ -1,11 +1,24 @@
-function Search() {
+import { useRef } from "react";
+interface Props {
+  onSearch : (search: string) => void;
+}
+function Search({ onSearch }: Props) {
+  const ref = useRef<HTMLInputElement>(null);
   return (
-    <input
-      className="w-1/3 rounded px-3"
-      type="text"
-      placeholder="search movie ...."
-      color="black"
-    />
+    <form
+      action=""
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (ref.current) return onSearch(ref.current.value);
+      }}
+    >
+      <input
+        type="text"
+        placeholder="search movie ...."
+        color="black"
+        ref={ref}
+      />
+    </form>
   );
 }
 
